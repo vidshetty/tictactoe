@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#262b40">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#262b40">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/png" href="./tictactoebyvid.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="./script.js" defer></script>
+    <title>tictactoeByVid</title>
+</head>
+<body>
+    <div class="main">
+        <div class="container" id="container">
+            <div class="title">
+                <p id="title">tic tac toe</p>
+            </div>
+            <div class="signin">
+                <form id="loginform">
+                    <input type="text" id="loginusername" placeholder="username" autocomplete="off" required>
+                    <input type="password" id="loginpassword" placeholder="password" autocomplete="off" required>
+                    <input type="text" id="loginroom" placeholder="create / join room" autocomplete="off" required>
+                    <input type="submit" id="loginbutton" value="login">
+                </form>
+            </div>
+            <div class="or"><p>OR</p></div>
+            <div class="register">
+                <form id="registerform">
+                    <input type="text" id="registername" placeholder="name" autocomplete="off" required>
+                    <input type="text" id="registerusername" placeholder="username" autocomplete="off" required>
+                    <input type="password" id="registerpassword" placeholder="password" autocomplete="off" required>
+                    <input type="submit" id="registerbutton" value="register">
+                </form>
+            </div>
+        </div>
+
+        <div class="container2 none" id="container2">
+            <div class="player1">
+                <div id="player1"></div>
+            </div>
+            <div class="message" id="messagediv">
+                <div id="message"></div>
+            </div>
+            <div class="start none" id="buttondiv">
+                <div class="button" id="button">start</div>
+            </div>
+            <div class="player2">
+                <div id="player2"></div>
+            </div>
+        </div>
+
+        <div class="container3 none" id="container3">
+            <div class="topcontainer">
+            <div class="top" id="top">
+                <div class="" id="topyou"></div>
+                <div class="topmsg" id="topmsg"></div>
+                <div class="" id="topopp"></div>
+            </div>
+            <div class="gameresult" id="gameresult">
+                <p></p>
+            </div>
+            </div>
+            <div class="gamecontainer" id="gamecontainer">
+                <div class="gamebody" id="gamebody">
+                    <div class="cell" onclick="clickcell(this)"><span>0</span></div>
+                    <div class="cell" onclick="clickcell(this)"><span>1</span></div>
+                    <div class="cell" onclick="clickcell(this)"><span>2</span></div>
+                    <div class="cell" onclick="clickcell(this)"><span>3</span></div>
+                    <div class="cell" onclick="clickcell(this)"><span>4</span></div>
+                    <div class="cell" onclick="clickcell(this)"><span>5</span></div>
+                    <div class="cell" onclick="clickcell(this)"><span>6</span></div>
+                    <div class="cell" onclick="clickcell(this)"><span>7</span></div>
+                    <div class="cell" onclick="clickcell(this)"><span>8</span></div>
+                </div>
+                <div class="logout" id="logout"><p>logout</p></div>
+            </div>
+        </div> 
+    </div>
+
+
+    <div class="alternate">
+        <p>Oops! Not optimized for mobile devices</p>
+        <p>View in landscape mode or on desktop</p>
+    </div>   
+
+</body>
+</html>

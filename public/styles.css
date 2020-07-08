@@ -1,0 +1,415 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    background-color: #303650;
+    height: 100vh;
+    width: 100vw;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container3{
+    width: 700px;
+    height: 450px;
+    background-color: #0e153a;
+    border-radius: 50px;
+}
+.topcontainer{
+    position: relative;
+    width: 100%;
+    height: 86px;
+}
+.top{
+    opacity: 1;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #5c6cbb;
+    transition: opacity 0.3s ease-in-out;
+}
+.top div:nth-child(1),.top div:nth-child(3){
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    color: aliceblue;
+}
+.top div:nth-child(2){
+    width: 150px;
+    height: 20px;
+    text-align: center;
+    color: aliceblue;
+}
+.gameresult{
+    opacity: 0;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #5c6cbb;
+    transition: opacity 0.3s ease-in-out;
+}
+.gameresult p{
+    color: white;
+    font-family: sans-serif;
+    font-size: 2em;
+    letter-spacing: 5px;
+}
+.gameresult.win{
+    background-color: #088a08;
+}
+.gameresult.lose{
+    background-color: #B22222;
+}
+.gameresult.draw{
+    background-color: black;
+}
+
+.gamecontainer{
+    width: 100%;
+    height: 364px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.gamecontainer.noaccess{
+    cursor: not-allowed;
+}
+.logout{
+    display: flex;
+    padding-left: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 30px;
+    background-color: #0e153a;
+    border: 2px solid #303650;
+    border-radius: 50px; 
+    cursor: pointer;
+}
+.logout:focus{
+    background-color: #5c6cbb;
+    border: none;
+    outline: none;
+}
+.logout:hover{
+    background-color: #5c6cbb;
+    border: 2px solid #0e153a;
+}
+.logout.none{
+    pointer-events: none;
+}
+.logout p{
+    color: white;
+    font-family: sans-serif;
+    letter-spacing: 10px;
+}
+.gamebody{
+    width: 240px;
+    height: 240px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    cursor: pointer;
+}
+.gamebody.none{
+    pointer-events: none;
+}
+.cell{
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgb(240, 248, 255,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: sans-serif;
+    font-size: 4em;
+    pointer-events: all;
+    transition: opacity 0.5s ease-in-out;
+}
+.cell span{
+    opacity: 0;
+}
+.cell.opacity span{
+    opacity: 1;
+}
+.cell.littleopacity span{
+    opacity: 0.2;
+}
+.cell.none{
+    pointer-events: none;
+}
+.cell:first-child,.cell:nth-child(2),.cell:nth-child(3){
+    border-top: none;
+}
+.cell:nth-child(3n+1){
+    border-left: none;
+}
+.cell:nth-child(3n+3){
+    border-right: none;
+}
+.cell:nth-child(7),.cell:nth-child(8),.cell:nth-child(9){
+    border-bottom: none;
+}
+
+.alternate{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    padding-top: 150px;
+}
+.alternate p{
+    color: aliceblue;
+    font-family: sans-serif;
+    letter-spacing: 5px;
+    font-size: 1em;
+}
+
+@media screen and (max-width:800px){
+    .main{
+        display: none;
+    }
+    .alternate{
+        display: flex;
+    }
+}
+
+.container{
+    position: relative;
+    width: 700px;
+    height: 450px;
+    background-color: #0e153a;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "title title"
+    "signin register"
+    "signin register"
+    "signin register"
+    "signin register";
+}
+
+.title{
+    margin: 10px;
+    width: 100%;
+    height: 86px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-area: title;
+    border-radius: 50px;
+    background-color: #5c6cbb;
+}
+.title p{
+    color: aliceblue;
+    font-family: sans-serif;
+    font-size: 45px;
+    letter-spacing: 10px;
+}
+
+.signin{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    grid-area: signin;
+}
+.signin form input:nth-child(1),.signin form input:nth-child(2),.signin form input:nth-child(3){
+    width: 200px;
+    height: 30px;
+    background-color: #0e153a;
+    border: 2px solid #303650;
+    border-radius: 50px;
+    margin-top: 35px;
+    margin-left: 60px;
+    padding-left: 20px;
+    color: aliceblue;
+}
+.signin form input:nth-child(1):focus,.signin form input:nth-child(2):focus,.signin form input:nth-child(3):focus{
+    border: 2px solid aliceblue;
+    border-radius: 50px;
+    outline: none;
+}
+.signin form input[type="submit"]{
+    margin-top: 35px;
+    margin-left: 60px;
+    width: 225px;
+    height: 30px;
+    background-color: #0e153a;
+    border: 2px solid #303650;
+    border-radius: 50px;
+    color: aliceblue;
+    letter-spacing: 10px;
+    transition: background-color 0.5s ease-in-out;
+}
+.signin form input[type="submit"]:focus{
+    background-color: #5c6cbb;
+    border: none;
+    outline: none;
+}
+.signin form input[type="submit"]:hover{
+    background-color: #5c6cbb;
+    border: none;
+}
+
+.register{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    grid-area: register;
+}
+.register form input:nth-child(1),.register form input:nth-child(2),.register form input:nth-child(3){
+    width: 200px;
+    height: 30px;
+    background-color: #0e153a;
+    border: 2px solid #303650;
+    border-radius: 50px;
+    margin-top: 35px;
+    margin-left: 65px;
+    padding-left: 20px;
+    color: white;
+}
+.register form input:nth-child(1):focus,.register form input:nth-child(2):focus,.register form input:nth-child(3):focus{
+    border: 2px solid aliceblue;
+    border-radius: 50px;
+    outline: none;
+}
+.register form input[type="submit"]{
+    margin-top: 35px;
+    margin-left: 65px;
+    width: 225px;
+    height: 30px;
+    background-color: #0e153a;
+    border: 2px solid #303650;
+    border-radius: 50px;
+    color: aliceblue;
+    letter-spacing: 10px;
+    transition: background-color 0.5s ease-in-out;
+}
+.register form input[type="submit"]:focus{
+    background-color: #5c6cbb;
+    border: none;
+    outline: none;
+}
+.register form input[type="submit"]:hover{
+    background-color: #5c6cbb;
+    border: none;
+}
+
+.container.none{
+    display: none;
+}
+.container3.none{
+    display: none;
+}
+
+.or{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #5c6cbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container2{
+    display: grid;
+    width: 700px;
+    height: 450px;
+    background-color: #0e153a;
+    border-radius: 50px;
+    grid-template-rows: repeat(3,1fr);
+}
+.container2.none{
+    display: none;
+}
+
+.player1,.message,.player2{
+    position: relative;
+    width: 100%;
+}
+.player1 div,.message div,.player2 div{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    letter-spacing: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-80%);
+}
+.player1 div,.player2 div{
+    font-size: 1.5em;
+}
+.message.none{
+    display: none;
+}
+
+.start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 50px;
+    color: aliceblue;
+    letter-spacing: 10px;
+    background-color: #0e153a;
+    border-radius: 50px;
+    border: 2px solid #303650;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+.button:focus{
+    background-color: #5c6cbb;
+    border: none;
+    outline: none;
+}
+.button:hover{
+    background-color: #5c6cbb;
+    border: none;
+}
+.button.none{
+    display: none;
+}
+.start.none{
+    display: none;
+}
+
+.topyou{
+    border-bottom: 5px solid aliceblue;
+}
